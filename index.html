@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>pace.in</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated HTML Page</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
     }
+
     h1 {
-      margin-top: 100px;
-      font-size: 2.5em;
-      color: #333;
+      font-size: 3em;
+      margin-top: 50px;
+      animation: bounce 2s infinite;
     }
-    .footer {
-      position: fixed;
-      bottom: 20px;
-      width: 100%;
-      font-size: 0.9em;
-      color: #666;
+
+    p {
+      font-size: 1.2em;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+      animation-delay: 1s;
     }
-    .footer a {
-      color: #007bff;
-      text-decoration: none;
-      margin: 0 10px;
+
+    .glow-button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1em;
+      color: white;
+      background-color: #ff416c;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff416c;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .glow-button:hover {
+      box-shadow: 0 0 20px #ff4b2b, 0 0 40px #ff4b2b;
+      transform: scale(1.1);
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>pace.in</h1>
-  <div class="footer">
-    © 2025 • 
-    <a href="http://ecap.pace.ac.in/privacy" target="_blank">Privacy Policy</a> • 
-    <a href="http://ecap.pace.ac.in/legal" target="_blank">Legal</a>
-  </div>
+  <h1>Welcome to My Animated Page</h1>
+  <p>Enjoy smooth transitions and glowing effects with CSS animations!</p>
+  <button class="glow-button">Click Me</button>
 </body>
 </html>
